@@ -5,6 +5,8 @@
 
 **Tide.nvim** is a Neovim plugin designed to streamline your workflow by helping you manage and quickly switch between frequently used files. It's similar to tools like [Harpoon](https://github.com/ThePrimeagen/harpoon), [Arrow](https://github.com/Andersbakken/arrow), and [Snipe](https://github.com/leepark81/snipe.nvim), allowing you to focus more on coding and less on file navigation.
 
+The UI design of Tide.nvim is inspired by/based on [menu.nvim](https://github.com/NvChad/menu), providing a simple and intuitive file management interface. Kudos to author for the inspiration!
+
 ![Preview](https://github.com/jackMort/tide.nvim/blob/media/preview.png?raw=true)
 
 ## Features
