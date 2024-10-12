@@ -326,8 +326,8 @@ end
 M.calculate_height = function()
   local lines_height = vim.api.nvim_get_option("lines")
   local statusline_height = vim.o.laststatus == 0 and 0 or 1 -- height of the statusline if present
-  local cmdline_height = vim.o.cmdheight                     -- height of the cmdline if present
-  local tabline_height = vim.o.showtabline == 0 and 0 or 1   -- height of the tabline if present
+  local cmdline_height = vim.o.cmdheight -- height of the cmdline if present
+  local tabline_height = vim.o.showtabline == 0 and 0 or 1 -- height of the tabline if present
   local total_height = lines_height
   local used_height = statusline_height + cmdline_height + tabline_height
   M.current_state.height = total_height - used_height
