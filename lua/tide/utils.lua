@@ -1,5 +1,11 @@
 local M = {}
 
+M.get_icon = function(filename)
+  local ext = string.match(filename, "%.(%a+)$")
+  local icon, _ = require("nvim-web-devicons").get_icon_color(filename, ext)
+  return icon
+end
+
 -- Utility function to generate unique names based on file paths
 M.generate_unique_names = function(file_paths)
   local name_map = {}
