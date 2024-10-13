@@ -40,6 +40,8 @@ M.delete_tag = function(tag)
   state.current_state.files = vim.tbl_filter(function(f)
     return f ~= file
   end, state.current_state.files)
+  state.current_state.tags[tag] = nil
+
   if state.current_state.popup then
     render.render()
   end
@@ -60,6 +62,7 @@ M.open_vertical = function(tag)
 end
 
 M.clear_all = function()
+  state.current_state.tags = {}
   state.current_state.files = {}
   if state.current_state.popup then
     render.render()

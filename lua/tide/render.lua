@@ -13,6 +13,8 @@ local M = {}
 M.render = function()
   -- reset linenr
   state.current_state.linenr = 1
+  -- clear all text in buffer
+  vim.api.nvim_buf_set_lines(state.current_state.popup.bufnr, 0, -1, false, {})
 
   M.render_empty_line()
   M.render_header("󱐋 Tide")

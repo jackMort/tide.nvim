@@ -28,8 +28,6 @@ M.update_layout = function()
       height = state.current_state.height,
     },
   })
-  -- clear all text in buffer
-  vim.api.nvim_buf_set_lines(state.current_state.popup.bufnr, 0, -1, false, {})
 
   render.render()
 
