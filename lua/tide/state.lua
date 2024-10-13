@@ -58,7 +58,7 @@ function M.setup(options)
 
   -- TODO: try to refactor to DRY
   M.current_state.root = utils.find_project_root()
-  M.current_state.state_filename = utils.make_safe_filename(M.current_state.root)
+  M.current_state.state_filename = utils.make_safe_filename(M.current_state.root) or "main"
   M.current_state.files = M.load_state() or {}
   for i, file in ipairs(M.current_state.files) do
     local tag = M.options.hints.dictionary:sub(i, i)
