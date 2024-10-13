@@ -27,8 +27,7 @@ M.render = function()
 
   local unique_names = utils.generate_unique_names(files)
 
-  for i, file in ipairs(files) do
-    local tag = state.options.hints.dictionary:sub(i, i)
+  for tag, file in pairs(state.current_state.tags) do
     state.current_state.tags[tag] = file
     M.render_file(utils.get_icon(file), unique_names[file], tag)
   end
@@ -89,7 +88,7 @@ M.render_comment = function(text)
 end
 
 M.render_file = function(ico, text, tag)
-  local full_text = string.format("  %s %s", ico, text)
+  local full_text = string.format("  %s %s", ico or "", text)
   M.render_line(NuiLine({
     NuiText(full_text, "TideLine"),
     NuiText(string.rep(" ", state.options.width - #full_text - #tag)),

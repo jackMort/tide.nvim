@@ -20,10 +20,19 @@ M.tag_current_file = function()
     return
   end
   table.insert(state.current_state.files, current_file)
-  render.render()
-  render.hover_file(current_file)
+
+  for i, file in ipairs(state.current_state.files) do
+    local tag = state.options.hints.dictionary:sub(i, i)
+    state.current_state.tags[tag] = file
+  end
+
+  if state.current_state.popup then
+    render.render()
+    render.hover_file(current_file)
+  end
 
   M.attach_dynamic_mappings()
+  state.save_state()
 end
 
 M.delete_tag = function(tag)
@@ -35,6 +44,7 @@ M.delete_tag = function(tag)
     render.render()
   end
   M.attach_dynamic_mappings()
+  state.save_state()
 end
 
 M.open_tag = function(tag)
@@ -55,6 +65,7 @@ M.clear_all = function()
     render.render()
   end
   M.attach_dynamic_mappings()
+  state.save_state()
 end
 
 M.attach_mappings = function()

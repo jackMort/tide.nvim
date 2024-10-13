@@ -8,6 +8,7 @@ local M = {}
 M.setup = function(options)
   state.setup(options)
   api.attach_mappings()
+  api.attach_dynamic_mappings()
 end
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
