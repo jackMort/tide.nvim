@@ -1,6 +1,7 @@
 local state = require("tide.state")
 local panel = require("tide.panel")
 local render = require("tide.render")
+local notifications = require("tide.notifications")
 
 local M = {}
 
@@ -21,14 +22,18 @@ M.tag_current_file = function()
   end
   table.insert(state.current_state.files, current_file)
 
+  local current_tag
   for i, file in ipairs(state.current_state.files) do
     local tag = state.options.hints.dictionary:sub(i, i)
     state.current_state.tags[tag] = file
+    current_tag = tag
   end
 
   if state.current_state.popup then
     render.render()
     render.hover_file(current_file)
+  else
+    notifications.notify("File tagged with " .. current_tag .. ".", "info", { title = "Tide" })
   end
 
   M.attach_dynamic_mappings()
@@ -44,6 +49,8 @@ M.delete_tag = function(tag)
 
   if state.current_state.popup then
     render.render()
+  else
+    notifications.notify("Tag deleted.", "info", { title = "Tide" })
   end
   M.attach_dynamic_mappings()
   state.save_state()
@@ -66,6 +73,8 @@ M.clear_all = function()
   state.current_state.files = {}
   if state.current_state.popup then
     render.render()
+  else
+    notifications.notify("All tags cleared.", "info", { title = "Tide" })
   end
   M.attach_dynamic_mappings()
   state.save_state()
