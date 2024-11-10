@@ -27,7 +27,7 @@ The UI design of Tide.nvim is inspired by/based on [menu.nvim](https://github.co
       -- optional configuration
     })
   end,
-  requires = {
+  dependencies = {
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons"
   }
