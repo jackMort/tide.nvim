@@ -84,7 +84,7 @@ M.attach_mappings = function()
   -- set basic mapping
   vim.keymap.set(
     "n",
-    state.options.keys.leader .. state.options.keys.leader,
+    state.options.keys.leader .. state.options.keys.panel,
     M.toggle_panel,
     { noremap = true, silent = true, desc = "tide panel" }
   )
