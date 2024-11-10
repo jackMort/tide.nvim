@@ -22,12 +22,10 @@ The UI design of Tide.nvim is inspired by/based on [menu.nvim](https://github.co
 ```lua
 {
   "jackMort/tide.nvim",
-  config = function()
-    require("tide").setup({
+  opts = {
       -- optional configuration
-    })
-  end,
-  requires = {
+  },
+  dependencies = {
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons"
   }
@@ -44,7 +42,7 @@ The UI design of Tide.nvim is inspired by/based on [menu.nvim](https://github.co
       -- optional configuration
     })
   end,
-  dependencies = {
+  requires = {
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons"
   }
