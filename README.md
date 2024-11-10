@@ -3,9 +3,9 @@
 ![GitHub Workflow Status](http://img.shields.io/github/actions/workflow/status/jackMort/tide.nvim/default.yml?branch=main&style=for-the-badge)
 ![Lua](https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua)
 
-**Tide.nvim** is a Neovim plugin designed to streamline your workflow by helping you manage and quickly switch between frequently used files. It's similar to tools like [Harpoon](https://github.com/ThePrimeagen/harpoon), [Arrow](https://github.com/Andersbakken/arrow), and [Snipe](https://github.com/leepark81/snipe.nvim), allowing you to focus more on coding and less on file navigation.
+**Tide.nvim** is a Neovim plugin designed to streamline your workflow by helping you manage and quickly switch between frequently used files. It's similar to tools like [Harpoon](https://github.com/ThePrimeagen/harpoon), [Arrow](https://github.com/otavioschwanck/arrow.nvim), and [Snipe](https://github.com/leath-dub/snipe.nvim), allowing you to focus more on coding and less on file navigation.
 
-The UI design of Tide.nvim is inspired by/based on [menu.nvim](https://github.com/NvChad/menu), providing a simple and intuitive file management interface. Kudos to author for the inspiration!
+The UI design of Tide.nvim is inspired by/based on [menu.nvim](https://github.com/nvzone/menu), providing a simple and intuitive file management interface. Kudos to author for the inspiration!
 
 ![Preview](https://github.com/jackMort/tide.nvim/blob/media/preview.png?raw=true)
 
