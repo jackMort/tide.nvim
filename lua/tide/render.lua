@@ -29,9 +29,11 @@ M.render = function()
 
   local unique_names = utils.generate_unique_names(files)
 
-  for tag, file in pairs(state.current_state.tags) do
-    state.current_state.tags[tag] = file
-    M.render_file(utils.get_icon(file), unique_names[file], tag)
+  for letter in state.options.hints.dictionary:gmatch(".") do
+    local file = state.current_state.tags[letter]
+    if file then
+      M.render_file(utils.get_icon(file), unique_names[file], letter)
+    end
   end
 
   for _ = state.current_state.linenr, state.current_state.height - MENU_HEIGHT do
